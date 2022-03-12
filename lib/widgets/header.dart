@@ -3,11 +3,12 @@ import 'package:get/get.dart';
 import 'package:tr3umphant_designs/constants/globals.dart';
 import 'package:tr3umphant_designs/menu_controller.dart';
 import 'package:tr3umphant_designs/responsive.dart';
+import 'package:tr3umphant_designs/widgets/socal.dart';
 import 'package:tr3umphant_designs/widgets/web_menu.dart';
 
 class Header extends StatelessWidget {
-  Header({Key? key}): super(key: key);
-  
+  Header({Key? key}) : super(key: key);
+
   final MenuController _controller = Get.put(MenuController());
 
   @override
@@ -20,7 +21,7 @@ class Header extends StatelessWidget {
           children: [
             Container(
               constraints: const BoxConstraints(maxWidth: Globals.kMaxWidth),
-              padding:const  EdgeInsets.all(Globals.kDefaultPadding),
+              padding: const EdgeInsets.all(Globals.kDefaultPadding),
               child: Column(
                 children: [
                   Row(
@@ -35,12 +36,12 @@ class Header extends StatelessWidget {
                             _controller.openOrCloseDrawer();
                           },
                         ),
-                      //SvgPicture.asset("assets/icons/logo.svg"),
+                      Image.asset("assets/icons/logo.svg"),
                       const Spacer(),
                       if (Responsive.isDesktop(context)) WebMenu(),
                       const Spacer(),
                       // Socal
-                      //Socal(),
+                      const Socal(),
                     ],
                   ),
                   const SizedBox(height: Globals.kDefaultPadding * 2),

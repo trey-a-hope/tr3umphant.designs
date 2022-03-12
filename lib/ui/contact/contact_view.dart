@@ -12,7 +12,7 @@ class ContactView extends StatelessWidget {
     return GetBuilder<ContactViewModel>(
       init: ContactViewModel(),
       builder: (model) => Column(
-        children: [
+        children: const <Widget>[
           Text('Contact Page'),
         ],
       ),
