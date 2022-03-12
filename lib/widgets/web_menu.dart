@@ -4,7 +4,9 @@ import 'package:tr3umphant_designs/constants/globals.dart';
 import 'package:tr3umphant_designs/menu_controller.dart';
 
 class WebMenu extends StatelessWidget {
-  final MenuController _controller = Get.put(MenuController());
+  WebMenu({Key? key}): super(key: key);
+  
+  final MenuController _controller = Get.find();
 
   @override
   Widget build(BuildContext context) {

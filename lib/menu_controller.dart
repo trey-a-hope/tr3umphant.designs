@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/state_manager.dart';
+import 'package:get_storage/get_storage.dart';
 import 'package:tr3umphant_designs/constants/globals.dart';
 
 class MenuController extends GetxController {
@@ -14,13 +14,23 @@ class MenuController extends GetxController {
 
   /// Menu items.
   List<String> get menuItems => [
-        "Cases",
-        "Services",
-        "About Us",
-        "Careers",
-        "Blog",
-        "Contact",
+        'Home',
+        'About Us',
+        'Portfolio',
+        'Contact Us',
       ];
+
+  /// Get storage instance.
+  final GetStorage _getStorage = Get.find();
+
+  @override
+  void onInit() async {
+    super.onInit();
+
+    // Set menu index to last visited page.
+    int menuIndex = _getStorage.read(Globals.menuIndex) ?? 0;
+    setMenuIndex(menuIndex);
+  }
 
   /// Toggle the menu drawer.
   void openOrCloseDrawer() {
@@ -36,9 +46,23 @@ class MenuController extends GetxController {
     // Update the index.
     _selectedIndex.value = index;
 
+    // Save selected index to get storage.
+    _getStorage.write(Globals.menuIndex, index);
+
     // Navigate to the specified page.
-    if (_selectedIndex.value == 1) {
-      Get.toNamed(Globals.routesContact);
+    switch (_selectedIndex.value) {
+      case 0:
+        Get.toNamed(Globals.routesHome);
+        break;
+      case 1:
+        Get.toNamed(Globals.routesAbout);
+        break;
+      case 2:
+        Get.toNamed(Globals.routesPortfolio);
+        break;
+      case 3:
+        Get.toNamed(Globals.routesContact);
+        break;
     }
   }
 }

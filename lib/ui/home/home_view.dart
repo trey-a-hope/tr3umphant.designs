@@ -1,44 +1,41 @@
 import 'package:flutter/material.dart';
-import 'package:get/get_state_manager/get_state_manager.dart';
 import 'package:tr3umphant_designs/ui/home/home_view_model.dart';
+import 'package:get/get.dart';
+import 'package:tr3umphant_designs/constants/globals.dart';
+import 'package:tr3umphant_designs/menu_controller.dart';
+import 'package:tr3umphant_designs/widgets/header.dart';
+import 'package:tr3umphant_designs/widgets/side_menu.dart';
 
-class HomeScreen extends StatelessWidget {
-  const HomeScreen({
+class HomeView extends StatelessWidget {
+  HomeView({
     Key? key,
   }) : super(key: key);
 
+  final MenuController _controller = Get.find();
+
   @override
   Widget build(BuildContext context) {
-    return GetBuilder(
+    return GetBuilder<HomeViewModel>(
       init: HomeViewModel(),
-      builder: (model) => Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: const <Widget>[
-          Text('Home Page'),
-          // Expanded(
-          //   flex: 2,
-          //   child: Column(
-          //     children: List.generate(
-          //       blogPosts.length,
-          //       (index) => BlogPostCard(blog: blogPosts[index]),
-          //     ),
-          //   ),
-          // ),
-          // if (!Responsive.isMobile(context)) SizedBox(width: kDefaultPadding),
-          // // Sidebar
-          // if (!Responsive.isMobile(context))
-          //   Expanded(
-          //     child: Column(
-          //       children: [
-          //         Search(),
-          //         SizedBox(height: kDefaultPadding),
-          //         Categories(),
-          //         SizedBox(height: kDefaultPadding),
-          //         RecentPosts(),
-          //       ],
-          //     ),
-          //   ),
-        ],
+      builder: (model) => Scaffold(
+        key: _controller.scaffoldkey,
+        drawer: SideMenu(),
+        body: SingleChildScrollView(
+          child: Column(
+            children: [
+              Header(),
+              Container(
+                padding: const EdgeInsets.all(Globals.kDefaultPadding),
+                constraints: const BoxConstraints(maxWidth: Globals.kMaxWidth),
+                child: const SafeArea(
+                  child: Center(
+                    child: Text('Home View'),
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
       ),
     );
   }

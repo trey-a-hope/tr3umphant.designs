@@ -1,10 +1,13 @@
-import 'package:flutter/material.dart'; 
+import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:tr3umphant_designs/constants/globals.dart';
 import 'package:tr3umphant_designs/menu_controller.dart';
 
 class SideMenu extends StatelessWidget {
-  final MenuController _controller = Get.put(MenuController());
+  SideMenu({Key? key}) : super(key: key);
+
+  final MenuController _controller = Get.find();
 
   @override
   Widget build(BuildContext context) {
@@ -14,11 +17,11 @@ class SideMenu extends StatelessWidget {
         child: Obx(
           () => ListView(
             children: [
-               DrawerHeader(
+              DrawerHeader(
                 child: Padding(
                   padding: const EdgeInsets.symmetric(
                       horizontal: Globals.kDefaultPadding * 3.5),
-                  child: Image.asset("assets/icons/logo.svg"),
+                  child: SvgPicture.asset("assets/icons/logo.svg"),
                 ),
               ),
               ...List.generate(

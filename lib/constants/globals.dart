@@ -6,6 +6,8 @@ class Globals {
   /// Routes
   static const String routesContact = '/contact';
   static const String routesHome = '/home';
+  static const String routesAbout = '/about';
+  static const String routesPortfolio = '/portfolio';
 
   /// Colors
   static const Color kPrimaryColor = Color(0xFFFF3B1D);
@@ -19,4 +21,7 @@ class Globals {
 
   /// Times
   static const Duration kDefaultDuration = Duration(milliseconds: 250);
+
+  /// Memory
+  static const String menuIndex = 'MENU_INDEX';
 }

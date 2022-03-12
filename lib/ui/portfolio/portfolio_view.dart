@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:tr3umphant_designs/ui/contact/contact_view_model.dart';
 import 'package:get/get.dart';
 import 'package:tr3umphant_designs/constants/globals.dart';
 import 'package:tr3umphant_designs/menu_controller.dart';
+import 'package:tr3umphant_designs/ui/portfolio/portfolio_view_model.dart';
 import 'package:tr3umphant_designs/widgets/header.dart';
 import 'package:tr3umphant_designs/widgets/side_menu.dart';
 
-class ContactView extends StatelessWidget {
-  ContactView({
+class PortfolioView extends StatelessWidget {
+  PortfolioView({
     Key? key,
   }) : super(key: key);
 
@@ -15,8 +15,8 @@ class ContactView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GetBuilder<ContactViewModel>(
-      init: ContactViewModel(),
+    return GetBuilder<PortfolioViewModel>(
+      init: PortfolioViewModel(),
       builder: (model) => Scaffold(
         key: _controller.scaffoldkey,
         drawer: SideMenu(),
@@ -29,7 +29,7 @@ class ContactView extends StatelessWidget {
                 constraints: const BoxConstraints(maxWidth: Globals.kMaxWidth),
                 child: const SafeArea(
                   child: Center(
-                    child: Text('Contact View'),
+                    child: Text('Portfolio View'),
                   ),
                 ),
               ),

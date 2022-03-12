@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:tr3umphant_designs/constants/globals.dart';
 import 'package:tr3umphant_designs/menu_controller.dart';
@@ -9,7 +10,7 @@ import 'package:tr3umphant_designs/widgets/web_menu.dart';
 class Header extends StatelessWidget {
   Header({Key? key}) : super(key: key);
 
-  final MenuController _controller = Get.put(MenuController());
+  final MenuController _controller = Get.find();
 
   @override
   Widget build(BuildContext context) {
@@ -36,7 +37,7 @@ class Header extends StatelessWidget {
                             _controller.openOrCloseDrawer();
                           },
                         ),
-                      Image.asset("assets/icons/logo.svg"),
+                      SvgPicture.asset("assets/icons/logo.svg"),
                       const Spacer(),
                       if (Responsive.isDesktop(context)) WebMenu(),
                       const Spacer(),
