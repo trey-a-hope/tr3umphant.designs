@@ -4,8 +4,8 @@ import 'package:tr3umphant_designs/constants/globals.dart';
 import 'package:tr3umphant_designs/menu_controller.dart';
 
 class WebMenu extends StatelessWidget {
-  WebMenu({Key? key}): super(key: key);
-  
+  WebMenu({Key? key}) : super(key: key);
+
   final MenuController _controller = Get.find();
 
   @override
@@ -17,7 +17,8 @@ class WebMenu extends StatelessWidget {
           (index) => WebMenuItem(
             text: _controller.menuItems[index],
             isActive: index == _controller.selectedIndex,
-            press: () => _controller.setMenuIndex(index),
+            press: () =>
+                _controller.setMenuIndex(index: index, context: context),
           ),
         ),
       ),

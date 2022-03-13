@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:tr3umphant_designs/constants/globals.dart';
+import 'package:tr3umphant_designs/responsive.dart';
 
 class MenuController extends GetxController {
   /// Key of of scaffold.
@@ -29,7 +30,7 @@ class MenuController extends GetxController {
 
     // Set menu index to last visited page.
     int menuIndex = _getStorage.read(Globals.menuIndex) ?? 0;
-    setMenuIndex(menuIndex);
+    setMenuIndex(index: menuIndex);
   }
 
   /// Toggle the menu drawer.
@@ -42,7 +43,7 @@ class MenuController extends GetxController {
   }
 
   /// Set the menu item index.
-  void setMenuIndex(int index) {
+  void setMenuIndex({required int index, BuildContext? context}) {
     // Update the index.
     _selectedIndex.value = index;
 
@@ -50,7 +51,9 @@ class MenuController extends GetxController {
     _getStorage.write(Globals.menuIndex, index);
 
     // Close the menu drawer, (of on mobile).
-    openOrCloseDrawer();
+    if (context != null && !Responsive.isDesktop(context)) {
+      openOrCloseDrawer();
+    }
 
     // Navigate to the specified page.
     switch (_selectedIndex.value) {

@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:tr3umphant_designs/constants/globals.dart';
-import '../../../responsive.dart';
+import 'package:url_launcher/url_launcher.dart';
 
-class Socal extends StatelessWidget {
-  const Socal({
+class Social extends StatelessWidget {
+  const Social({
     Key? key,
   }) : super(key: key);
 
@@ -12,27 +12,17 @@ class Socal extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        if (!Responsive.isMobile(context))
-          SvgPicture.asset("assets/icons/behance-alt.svg"),
-        if (!Responsive.isMobile(context))
-          Padding(
-            padding: const EdgeInsets.symmetric(
-                horizontal: Globals.kDefaultPadding / 2),
-            child: SvgPicture.asset("assets/icons/feather_dribbble.svg"),
+        IconButton(
+          icon: const Icon(
+            MdiIcons.instagram,
+            color: Colors.white,
           ),
-        if (!Responsive.isMobile(context))
-          SvgPicture.asset("assets/icons/feather_twitter.svg"),
-        const SizedBox(width: Globals.kDefaultPadding),
-        ElevatedButton(
-          onPressed: () {},
-          style: TextButton.styleFrom(
-            padding: EdgeInsets.symmetric(
-              horizontal: Globals.kDefaultPadding * 1.5,
-              vertical: Globals.kDefaultPadding /
-                  (Responsive.isDesktop(context) ? 1 : 2),
-            ),
-          ),
-          child: const Text("Let's Talk"),
+          onPressed: () async {
+            // Open Instagram page.
+            if (!await launch(Globals.instagramUrl)) {
+              throw 'Could not launch ${Globals.instagramUrl}';
+            }
+          },
         ),
       ],
     );

@@ -30,7 +30,7 @@ class SideMenu extends StatelessWidget {
                   isActive: index == _controller.selectedIndex,
                   title: _controller.menuItems[index],
                   press: () {
-                    _controller.setMenuIndex(index);
+                    _controller.setMenuIndex(index: index, context: context);
                   },
                 ),
               ),

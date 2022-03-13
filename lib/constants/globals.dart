@@ -24,4 +24,11 @@ class Globals {
 
   /// Memory
   static const String menuIndex = 'MENU_INDEX';
+
+  /// Social
+  static const String instagramUrl =
+      'https://www.instagram.com/tr3umphant.designs/?hl=en';
+
+  /// Images
+  static const String businessLogo = 'assets/images/business_logo.png';
 }
