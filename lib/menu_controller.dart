@@ -49,6 +49,9 @@ class MenuController extends GetxController {
     // Save selected index to get storage.
     _getStorage.write(Globals.menuIndex, index);
 
+    // Close the menu drawer, (of on mobile).
+    openOrCloseDrawer();
+
     // Navigate to the specified page.
     switch (_selectedIndex.value) {
       case 0:
