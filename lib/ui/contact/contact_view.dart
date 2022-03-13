@@ -29,7 +29,7 @@ class ContactView extends StatelessWidget {
                 constraints: const BoxConstraints(maxWidth: Globals.kMaxWidth),
                 child: const SafeArea(
                   child: Center(
-                    child: Text('Contact View'),
+                    child: Text('Contact View',),
                   ),
                 ),
               ),

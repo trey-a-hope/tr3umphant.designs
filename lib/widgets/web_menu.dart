@@ -78,6 +78,7 @@ class _WebMenuItemState extends State<WebMenuItem> {
           style: TextStyle(
             color: Colors.white,
             fontWeight: widget.isActive ? FontWeight.w600 : FontWeight.normal,
+            fontFamily: 'Raleway',
           ),
         ),
       ),

@@ -50,6 +50,7 @@ class Header extends StatelessWidget {
                       fontSize: 32,
                       color: Colors.white,
                       fontWeight: FontWeight.bold,
+                      fontFamily: 'Raleway',
                     ),
                   ),
                   const Padding(
