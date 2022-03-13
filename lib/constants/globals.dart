@@ -31,4 +31,12 @@ class Globals {
 
   /// Images
   static const String businessLogo = 'assets/images/business_logo.png';
+
+  /// About
+  static const String ourWhy =
+      'We solve everyday problems of small businesses and individuals via custom solutions that is cost friendly. We believe it can be very difficult for such business to get started without the right solutions, so we want to focus on the pains of every business and determine how to fix this.';
+  static const String ourHow =
+      'The way we do this is by focusing on affordability, convenience, and user friendly services. Reaching out to the “average Joe” consumer only, we can target the less heard and funded to ensure they’re able to take advantage of these custom solutions.';
+  static const String ourWhat =
+      'We create mobile and web applications in the form of MVPs, (minimal viable products) for small businesses and individuals. Without heavy focus on the UI, we can focus more on the actual functionality and how the solution to their problem can be delivered in order to see there business thrive.';
 }
