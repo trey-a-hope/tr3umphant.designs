@@ -18,6 +18,7 @@ class MenuController extends GetxController {
         'Home',
         'About Us',
         'Portfolio',
+        'Pricing',
         'Contact Us',
       ];
 
@@ -67,6 +68,9 @@ class MenuController extends GetxController {
         Get.toNamed(Globals.routesPortfolio);
         break;
       case 3:
+        Get.toNamed(Globals.routesPricing);
+        break;
+      case 4:
         Get.toNamed(Globals.routesContact);
         break;
     }

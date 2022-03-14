@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:tr3umphant_designs/constants/globals.dart';
 import 'package:tr3umphant_designs/menu_controller.dart';
 import 'package:tr3umphant_designs/widgets/header.dart';
+import 'package:tr3umphant_designs/widgets/page_image.dart';
 import 'package:tr3umphant_designs/widgets/side_menu.dart';
 
 class ContactView extends StatelessWidget {
@@ -24,12 +25,18 @@ class ContactView extends StatelessWidget {
           child: Column(
             children: [
               Header(),
+              const PageImage(
+                imagePath: Globals.blackIllustration3,
+                title: 'Contact Us',
+              ),
               Container(
                 padding: const EdgeInsets.all(Globals.kDefaultPadding),
                 constraints: const BoxConstraints(maxWidth: Globals.kMaxWidth),
                 child: const SafeArea(
                   child: Center(
-                    child: Text('Contact View',),
+                    child: Text(
+                      'Contact View',
+                    ),
                   ),
                 ),
               ),

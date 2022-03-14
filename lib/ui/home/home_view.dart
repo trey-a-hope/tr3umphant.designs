@@ -27,9 +27,14 @@ class HomeView extends StatelessWidget {
               Container(
                 padding: const EdgeInsets.all(Globals.kDefaultPadding),
                 constraints: const BoxConstraints(maxWidth: Globals.kMaxWidth),
-                child: const SafeArea(
-                  child: Center(
-                    child: Text('Home View'),
+                child: SafeArea(
+                  child: Column(
+                    children: [
+                      Image.asset(Globals.businessLogo, width: 300),
+                      const Text(
+                        'YouTube Video Could Go Here...',
+                      ),
+                    ],
                   ),
                 ),
               ),

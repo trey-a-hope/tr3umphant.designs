@@ -4,6 +4,7 @@ import 'package:tr3umphant_designs/ui/about/about_view.dart';
 import 'package:tr3umphant_designs/ui/contact/contact_view.dart';
 import 'package:tr3umphant_designs/ui/home/home_view.dart';
 import 'package:tr3umphant_designs/ui/portfolio/portfolio_view.dart';
+import 'package:tr3umphant_designs/ui/pricing/pricing_view.dart';
 
 class AppRoutes {
   AppRoutes._();
@@ -26,6 +27,11 @@ class AppRoutes {
     GetPage(
       name: Globals.routesPortfolio,
       page: () => PortfolioView(),
+      transition: Transition.noTransition,
+    ),
+    GetPage(
+      name: Globals.routesPricing,
+      page: () => PricingView(),
       transition: Transition.noTransition,
     ),
   ];

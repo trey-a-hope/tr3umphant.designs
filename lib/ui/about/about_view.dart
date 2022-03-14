@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:tr3umphant_designs/responsive.dart';
 import 'package:tr3umphant_designs/ui/about/about_view_model.dart';
 import 'package:get/get.dart';
 import 'package:tr3umphant_designs/constants/globals.dart';
 import 'package:tr3umphant_designs/menu_controller.dart';
 import 'package:tr3umphant_designs/widgets/custom_view_widget.dart';
 import 'package:tr3umphant_designs/widgets/header.dart';
+import 'package:tr3umphant_designs/widgets/page_image.dart';
 import 'package:tr3umphant_designs/widgets/side_menu.dart';
 
 class AboutView extends StatelessWidget {
@@ -25,6 +27,10 @@ class AboutView extends StatelessWidget {
           child: Column(
             children: [
               Header(),
+              const PageImage(
+                imagePath: Globals.blackIllustration5,
+                title: 'About Us',
+              ),
               Container(
                 padding: const EdgeInsets.all(Globals.kDefaultPadding),
                 constraints: const BoxConstraints(maxWidth: Globals.kMaxWidth),
