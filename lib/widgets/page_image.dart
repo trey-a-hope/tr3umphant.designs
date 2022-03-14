@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
- import 'package:tr3umphant_designs/responsive.dart';
+import 'package:tr3umphant_designs/responsive.dart';
 
 class PageImage extends StatelessWidget {
   const PageImage({
@@ -25,6 +25,7 @@ class PageImage extends StatelessWidget {
           style: const TextStyle(
             fontWeight: FontWeight.bold,
             fontSize: 32,
+            fontFamily: 'Raleway',
           ),
         ),
       ],
