@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:getwidget/getwidget.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:tr3umphant_designs/models/portfolio_app.dart';
+import 'package:tr3umphant_designs/responsive.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class PortfolioAppWidget extends StatelessWidget {
@@ -20,7 +21,7 @@ class PortfolioAppWidget extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             CircleAvatar(
-              radius: 50,
+              radius: Responsive.isMobile(context) ? 25 : 50,
               backgroundImage: Image.network(
                 portfolioApp.imagePath,
               ).image,
@@ -35,7 +36,13 @@ class PortfolioAppWidget extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 10),
-            Text(portfolioApp.description, textAlign: TextAlign.center),
+            Text(
+              portfolioApp.description,
+              textAlign: TextAlign.center,
+              style: const TextStyle(
+                fontFamily: 'Raleway',
+              ),
+            ),
             const Spacer(),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
