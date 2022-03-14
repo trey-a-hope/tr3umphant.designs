@@ -4,6 +4,7 @@ import 'package:get_storage/get_storage.dart';
 import 'package:tr3umphant_designs/constants/app_routes.dart';
 import 'package:tr3umphant_designs/constants/app_themes.dart';
 import 'package:tr3umphant_designs/constants/globals.dart';
+import 'package:tr3umphant_designs/home_page.dart';
 import 'package:tr3umphant_designs/initial_binding.dart';
 
 void main() async {
@@ -21,10 +22,13 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Tr3umphant.Designs',
-      theme: AppThemes.lightTheme,
+      theme: ThemeData(
+        visualDensity: VisualDensity.adaptivePlatformDensity,
+      ),
       initialBinding: InitialBinding(),
-      initialRoute: Globals.routesHome,
-      getPages: AppRoutes.routes,
+      // initialRoute: Globals.routesHome,
+      // getPages: AppRoutes.routes,
+      home: HomePage(),
     );
   }
 }

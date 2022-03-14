@@ -56,7 +56,9 @@ class Header extends StatelessWidget {
                   const Padding(
                     padding:
                         EdgeInsets.symmetric(vertical: Globals.kDefaultPadding),
-                    child: Text(
+                    child: 
+                    
+                    Text(
                       'Custom solutions for everyday problems.',
                       textAlign: TextAlign.center,
                       style: TextStyle(
