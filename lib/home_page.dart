@@ -1,4 +1,7 @@
+import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
+import 'package:tr3umphant_designs/constants/globals.dart';
 import 'package:tr3umphant_designs/widgets/about_section.dart';
+import 'package:tr3umphant_designs/widgets/portfolio_section.dart';
 import 'package:tr3umphant_designs/widgetss/bottom_bar.dart';
 import 'package:tr3umphant_designs/widgetss/carousel.dart';
 import 'package:tr3umphant_designs/widgetss/destination_heading.dart';
@@ -6,6 +9,7 @@ import 'package:tr3umphant_designs/widgetss/explore_drawer.dart';
 import 'package:tr3umphant_designs/widgetss/responsive.dart';
 import 'package:tr3umphant_designs/widgetss/top_bar_contents.dart';
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -18,6 +22,7 @@ class _HomePageState extends State<HomePage> {
   double _opacity = 0;
 
   final GlobalKey _aboutGlobalKey = GlobalKey();
+  final GlobalKey _portfolioGlobalKey = GlobalKey();
 
   _scrollListener() {
     setState(() {
@@ -44,22 +49,13 @@ class _HomePageState extends State<HomePage> {
           ? AppBar(
               backgroundColor: Colors.blueGrey.shade900.withOpacity(_opacity),
               elevation: 0,
-              title: Text(
-                'EXPLORE',
-                style: TextStyle(
-                  color: Colors.blueGrey.shade100,
-                  fontSize: 20,
-                  fontFamily: 'Montserrat',
-                  fontWeight: FontWeight.w400,
-                  letterSpacing: 3,
-                ),
-              ),
             )
           : PreferredSize(
               preferredSize: Size(screenSize.width, 1000),
               child: TopBarContents(
                 opacity: _opacity,
                 aboutGlobalKey: _aboutGlobalKey,
+                portfolioGlobalKey: _portfolioGlobalKey,
               ),
             ),
       drawer: const ExploreDrawer(),
@@ -108,8 +104,12 @@ class _HomePageState extends State<HomePage> {
             ),
             AboutSection(
                 screenSize: screenSize, aboutGlobalKey: _aboutGlobalKey),
-            DestinationHeading(screenSize: screenSize),
-            DestinationCarousel(),
+            Divider(),
+            PortfolioSection(
+                screenSize: screenSize,
+                portfolioGlobalKey: _portfolioGlobalKey),
+            // DestinationHeading(screenSize: screenSize),
+            // DestinationCarousel(),
             SizedBox(height: screenSize.height / 10),
             BottomBar(),
           ],

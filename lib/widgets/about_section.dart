@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tr3umphant_designs/constants/globals.dart';
+import 'package:tr3umphant_designs/widgets/section_heading.dart';
 import 'package:tr3umphant_designs/widgetss/responsive.dart';
 
 class AboutSection extends StatelessWidget {
@@ -35,42 +36,10 @@ class AboutSection extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Padding(
-          key: aboutGlobalKey,
-          padding: EdgeInsets.only(
-            top: screenSize.height * 0.06,
-            left: screenSize.width / 15,
-            right: screenSize.width / 15,
-          ),
-          child: ResponsiveWidget.isSmallScreen(context)
-              ? Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: const [
-                    Text(
-                      'About Us',
-                      style: TextStyle(
-                        fontSize: 24,
-                        fontFamily: 'Montserrat',
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ],
-                )
-              : Row(
-                  mainAxisSize: MainAxisSize.max,
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: const [
-                    Text(
-                      'About Us',
-                      style: TextStyle(
-                        fontSize: 40,
-                        fontFamily: 'Montserrat',
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ],
-                ),
+        SectionHeading(
+          screenSize: screenSize,
+          globalKey: aboutGlobalKey,
+          title: 'About Us',
         ),
         ResponsiveWidget.isSmallScreen(context)
             ? Padding(

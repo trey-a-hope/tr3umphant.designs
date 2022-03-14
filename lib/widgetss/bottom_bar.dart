@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:tr3umphant_designs/constants/globals.dart';
 import 'package:tr3umphant_designs/widgetss/bottom_bar_column.dart';
 import 'package:tr3umphant_designs/widgetss/info_text.dart';
 import 'package:tr3umphant_designs/widgetss/responsive.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class BottomBar extends StatelessWidget {
   const BottomBar({
@@ -32,11 +34,38 @@ class BottomBar extends StatelessWidget {
                       s2: 'Cancellation',
                       s3: 'FAQ',
                     ),
-                    BottomBarColumn(
-                      heading: 'SOCIAL',
-                      s1: 'Twitter',
-                      s2: 'Facebook',
-                      s3: 'YouTube',
+                    Padding(
+                      padding: EdgeInsets.only(bottom: 20.0),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            'SOCIAL',
+                            style: TextStyle(
+                              color: Colors.blueGrey[300],
+                              fontSize: 18,
+                              fontWeight: FontWeight.w500,
+                            ),
+                          ),
+                          SizedBox(
+                            height: 10,
+                          ),
+                          InkWell(
+                            onTap: () async {
+                              if (!await launch(Globals.instagramUrl)) {
+                                throw 'Could not launch ${Globals.instagramUrl}';
+                              }
+                            },
+                            child: Text(
+                              'Instagram',
+                              style: TextStyle(
+                                color: Colors.blueGrey[100],
+                                fontSize: 14,
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
                   ],
                 ),
@@ -85,11 +114,38 @@ class BottomBar extends StatelessWidget {
                       s2: 'Cancellation',
                       s3: 'FAQ',
                     ),
-                    BottomBarColumn(
-                      heading: 'SOCIAL',
-                      s1: 'Twitter',
-                      s2: 'Facebook',
-                      s3: 'YouTube',
+                    Padding(
+                      padding: EdgeInsets.only(bottom: 20.0),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            'SOCIAL',
+                            style: TextStyle(
+                              color: Colors.blueGrey[300],
+                              fontSize: 18,
+                              fontWeight: FontWeight.w500,
+                            ),
+                          ),
+                          SizedBox(
+                            height: 10,
+                          ),
+                          InkWell(
+                            onTap: () async {
+                              if (!await launch(Globals.instagramUrl)) {
+                                throw 'Could not launch ${Globals.instagramUrl}';
+                              }
+                            },
+                            child: Text(
+                              'Instagram',
+                              style: TextStyle(
+                                color: Colors.blueGrey[100],
+                                fontSize: 14,
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
                     Container(
                       color: Colors.blueGrey,
